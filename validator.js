@@ -49,7 +49,7 @@ class Validator {
     }
 
     if(elFields[fieldName].matching) {
-        let matchingEl = document.querySelector(`input[name=$"{elFields[fieldName].matching}"]`);
+        let matchingEl = document.querySelector(`input[name="${elFields[fieldName].matching}"]`);
 
         if(fieldValue !== matchingEl.value) {
             this.errors[fieldName].push('Lozinke se ne poklapaju');
@@ -85,6 +85,7 @@ class Validator {
 
   validateEmail(email) {
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+       return true;
     }
 
     return false;
